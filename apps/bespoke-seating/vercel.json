@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs", 
+  "buildCommand": "cd ../.. && npm run build -- --scope=bespoke-seating",
+  "devCommand": "cd ../.. && npm run dev -- --scope=bespoke-seating",
+  "installCommand": "cd ../.. && npm install"
+}

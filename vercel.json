@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/crafted-innovation/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "apps/dev-collective/package.json", 
+      "use": "@vercel/next"
+    },
+    {
+      "src": "apps/bespoke-seating/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/dev-collective/(.*)",
+      "dest": "apps/dev-collective/$1"
+    },
+    {
+      "src": "/bespoke-seating/(.*)",
+      "dest": "apps/bespoke-seating/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "apps/crafted-innovation/$1"
+    }
+  ]
+}

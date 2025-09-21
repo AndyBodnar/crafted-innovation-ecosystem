@@ -1,135 +1,172 @@
-# Turborepo starter
+# Crafted Innovation Ecosystem
 
-This Turborepo starter is maintained by the Turborepo core team.
+A modern monorepo containing three interconnected websites built with Next.js and Turborepo.
 
-## Using this example
+## 🏗️ Architecture
 
-Run the following command:
+This monorepo contains three Next.js applications:
 
-```sh
-npx create-turbo@latest
+- **Crafted Innovation** (Port 3000) - Main tech consultancy landing page
+- **Dev Collective** (Port 3001) - Developer community platform (placeholder)
+- **Bespoke Seating Company** (Port 3002) - Custom furniture business (placeholder)
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm 9+
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd crafted-innovation-ecosystem
+
+# Install dependencies
+npm install
+
+# Start all applications in development mode
+npm run dev
 ```
 
-## What's inside?
+### Individual App Development
 
-This Turborepo includes the following packages/apps:
+```bash
+# Run only Crafted Innovation (port 3000)
+npm run dev -- --scope=crafted-innovation
 
-### Apps and Packages
+# Run only Dev Collective (port 3001)
+npm run dev -- --scope=dev-collective
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+# Run only Bespoke Seating (port 3002)
+npm run dev -- --scope=bespoke-seating
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+## 📦 Project Structure
 
 ```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+crafted-innovation-ecosystem/
+├── apps/
+│   ├── crafted-innovation/     # Main landing page
+│   ├── dev-collective/         # Developer community
+│   └── bespoke-seating/        # Furniture business
+├── packages/
+│   ├── ui/                     # Shared UI components
+│   ├── eslint-config/          # Shared ESLint config
+│   └── typescript-config/      # Shared TypeScript config
+├── turbo.json                  # Turborepo configuration
+└── package.json               # Root package.json
 ```
 
-### Develop
+## 🛠️ Available Scripts
 
-To develop all apps and packages, run the following command:
+```bash
+# Development
+npm run dev          # Start all apps in development mode
+npm run build        # Build all apps for production
+npm run lint         # Lint all packages
+npm run format       # Format code with Prettier
+npm run check-types  # Type check all packages
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+# Individual app commands
+npm run dev -- --scope=crafted-innovation
+npm run build -- --scope=dev-collective
 ```
 
-### Remote Caching
+## 🌐 Deployment
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+### Vercel (Recommended)
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+Each app can be deployed separately to Vercel:
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+1. **Crafted Innovation**: Connect your main domain
+2. **Dev Collective**: Connect your dev collective domain
+3. **Bespoke Seating**: Connect your furniture business domain
 
+#### Setup Steps:
+
+1. Push your code to GitHub
+2. Connect each app directory to a separate Vercel project:
+   - `apps/crafted-innovation` → Main domain
+   - `apps/dev-collective` → Dev collective domain
+   - `apps/bespoke-seating` → Furniture domain
+
+3. Vercel will automatically detect the configuration files and build correctly
+
+### Domain Configuration
+
+Update the cross-site links in each app once you have your domains:
+
+- Replace `http://localhost:3000` with your main domain
+- Replace `http://localhost:3001` with your dev collective domain  
+- Replace `http://localhost:3002` with your furniture domain
+
+## 🎨 Customization
+
+### Adding New Features
+
+1. **Shared Components**: Add to `packages/ui/`
+2. **App-specific Features**: Add to respective app directories
+3. **Shared Configuration**: Update in `packages/` directories
+
+### Styling
+
+Each app uses CSS modules for styling. The color schemes are:
+
+- **Crafted Innovation**: Blue theme (`#0070f3`)
+- **Dev Collective**: Green theme (`#10b981`) 
+- **Bespoke Seating**: Orange theme (`#d97706`)
+
+## 🔧 Adding Tailwind CSS (Optional)
+
+To add Tailwind CSS across all apps:
+
+```bash
+# Install Tailwind dependencies
+npm install -D tailwindcss autoprefixer postcss
+
+# Create Tailwind config
+npx tailwindcss init -p
 ```
-cd my-turborepo
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
+## 📱 Features
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
+### Crafted Innovation (Main Site)
+- Hero section with service overview
+- Service cards highlighting capabilities
+- Ecosystem navigation to other sites
+- Professional consulting focus
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### Dev Collective (Coming Soon)
+- Developer community features
+- Project collaboration tools
+- Knowledge sharing platform
+- Skill matching system
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+### Bespoke Seating Company (Launching Soon)
+- Custom furniture showcase
+- Process overview
+- Premium seating solutions
+- Consultation booking
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
+## 🤝 Contributing
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test across all apps
+5. Submit a pull request
 
-## Useful Links
+## 📄 License
 
-Learn more about the power of Turborepo:
+Copyright © 2024 Crafted Innovation. All rights reserved.
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+## 🆘 Support
+
+For questions or support, contact [your-email@domain.com]
+
+---
+
+Built with ❤️ using Next.js, Turborepo, and modern web technologies.

@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "cd ../.. && npm run build -- --scope=dev-collective",
+  "devCommand": "cd ../.. && npm run dev -- --scope=dev-collective",
+  "installCommand": "cd ../.. && npm install"
+}

@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "cd ../.. && npm run build -- --scope=crafted-innovation",
+  "devCommand": "cd ../.. && npm run dev -- --scope=crafted-innovation",
+  "installCommand": "cd ../.. && npm install"
+}
