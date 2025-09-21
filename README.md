@@ -165,7 +165,7 @@ Copyright © 2024 Crafted Innovation. All rights reserved.
 
 ## 🆘 Support
 
-For questions or support, contact [your-email@domain.com]
+For questions or support, contact [andy@bespokeseating.xyz]
 
 ---
 
